@@ -17,6 +17,7 @@ struct Response: Codable {
 // MARK: BUSINESS
 
 struct Business: Codable {
+    
     let categories: [Category]
     let coordinates: Coordinate
     let display_phone: String
@@ -33,6 +34,15 @@ struct Business: Codable {
     let review_count: Int
     let url: String
     let transactions: [String]
+}
+
+extension Business: CustomStringConvertible {
+    
+    var description: String {
+        "a bussiness \(url)"
+    }
+    
+    
 }
 
 struct Category: Codable {
